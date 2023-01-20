@@ -44,12 +44,7 @@ class ProfilePage extends StatelessWidget {
                                     color: Colors.white,
                                   ),
                                 ),
-                                Image.asset(
-                                  'assets/suit.png',
-                                  height: 50.sp,
-                                  width: 50.sp,
-                                  color: Colors.white,
-                                ),
+                                Text('')
                               ],
                             ),
                           ),
@@ -87,10 +82,10 @@ class ProfilePage extends StatelessWidget {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(22.0),
-                                    side: BorderSide(color: Colors.red)),
+                                    side: BorderSide(color: Colors.black)),
                               ),
                               backgroundColor: MaterialStateProperty.all(
-                                Colors.red,
+                                Colors.black,
                               )),
                           child: Text('Chat',
                               style: Theme.of(context)
@@ -127,9 +122,7 @@ class ProfilePage extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .bodyText1!
-                              .copyWith(
-                                  fontSize: 12.sp,
-                                  color: Theme.of(context).primaryColor),
+                              .copyWith(fontSize: 12.sp, color: Colors.black),
                         ),
                       ],
                     ),
@@ -154,9 +147,10 @@ class ProfilePage extends StatelessWidget {
                     ),
                     Text(
                       'Join us to be part of Plan and Party to enjoy exclusive deals',
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                          fontSize: 12.sp,
-                          color: Theme.of(context).primaryColor),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1!
+                          .copyWith(fontSize: 12.sp, color: Colors.black),
                     ),
                     Row(
                       children: [
@@ -213,8 +207,7 @@ class ProfilePage extends StatelessWidget {
                                   .textTheme
                                   .bodyText1!
                                   .copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 11.sp),
+                                      color: Colors.black, fontSize: 11.sp),
                             ),
                             SizedBox(
                               height: 0.5.h,
@@ -260,8 +253,7 @@ class ProfilePage extends StatelessWidget {
                                   .textTheme
                                   .bodyText1!
                                   .copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 11.sp),
+                                      color: Colors.black, fontSize: 11.sp),
                             ),
                             SizedBox(
                               height: 0.5.h,
@@ -300,7 +292,7 @@ class ProfilePage extends StatelessWidget {
                                   .bodyText1!
                                   .copyWith(
                                       fontStyle: FontStyle.italic,
-                                      color: Theme.of(context).primaryColor,
+                                      color: Colors.black,
                                       fontSize: 11.sp),
                             ),
                             SizedBox(
@@ -312,8 +304,7 @@ class ProfilePage extends StatelessWidget {
                                   .textTheme
                                   .bodyText1!
                                   .copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 11.sp),
+                                      color: Colors.black, fontSize: 11.sp),
                             ),
                             SizedBox(
                               height: 0.5.h,
@@ -339,10 +330,11 @@ class ProfilePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Veb Rating',
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 12.sp),
+                      'Rating',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1!
+                          .copyWith(color: Colors.black, fontSize: 12.sp),
                     ),
                     // Container(child: RatingStarBar(context)),
                     Image.asset(
@@ -376,7 +368,7 @@ class ProfilePage extends StatelessWidget {
                               .textTheme
                               .bodyText1!
                               .copyWith(
-                                  color: Theme.of(context).primaryColor,
+                                  color: Colors.black,
                                   fontStyle: FontStyle.italic,
                                   fontSize: 13.sp),
                         ),
@@ -386,7 +378,7 @@ class ProfilePage extends StatelessWidget {
                               .textTheme
                               .bodyText1!
                               .copyWith(
-                                  color: Theme.of(context).primaryColor,
+                                  color: Colors.red,
                                   fontStyle: FontStyle.italic,
                                   fontSize: 13.sp),
                         ),

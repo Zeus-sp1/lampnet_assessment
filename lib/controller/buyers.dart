@@ -9,9 +9,7 @@ import 'package:image_picker/image_picker.dart';
 class BuyersController extends GetxController {
   var selectedImagePath = ''.obs;
   var selectedImageSize = ''.obs;
-  final cloudinary = CloudinaryPublic(
-      'https://api.cloudinary.com/v1_1/do3waasgr', 'crq4is1h',
-      cache: false);
+  final cloudinary = CloudinaryPublic('do3waasgr', 'crq4is1h', cache: false);
 
   void getImage(ImageSource imageSource) async {
     final pickedFile = await ImagePicker().getImage(source: imageSource);

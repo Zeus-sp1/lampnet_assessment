@@ -15,7 +15,7 @@ class OnBoarding_Page extends StatefulWidget {
 }
 
 class _OnBoarding_PageState extends State<OnBoarding_Page> {
-  String? title = '';
+  String? title = 'Next';
   int? index;
   String? quote = '';
   String? quote2 = '';
