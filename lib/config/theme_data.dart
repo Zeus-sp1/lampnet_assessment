@@ -6,7 +6,7 @@ import 'package:sizer/sizer.dart';
 
 class AppThemes {
   static final appThemeData = ThemeData(
-    primaryColor: Color(0xFF1A5333),
+    primaryColor: Colors.orangeAccent,
     textTheme: TextTheme(
       bodyText1: GoogleFonts.roboto(
           textStyle: const TextStyle(

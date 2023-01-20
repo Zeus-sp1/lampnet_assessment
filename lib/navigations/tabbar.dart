@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lampnet/pages/message/view/suppliers.dart';
 
 import '../pages/eventPlace/view/event_place_welcome.dart';
 import '../pages/favorite/view/favorite_page.dart';
@@ -55,7 +56,7 @@ class _TabbarState extends State<Tabbar> {
       body: Stack(
         children: [
           renderView(0, MarketPage()),
-          renderView(1, MessagePage()),
+          renderView(1, Suppliers()),
           renderView(2, FavoritePage()),
           renderView(3, ProfilePage()),
           renderView(4, SettingsPage()),

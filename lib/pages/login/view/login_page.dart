@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../navigations/tabbar.dart';
 import '../../../utils/custom_button.dart';
 import '../../../utils/custom_textbox.dart';
+import '../../market/view/market_page.dart';
 import '../../register/view/registration_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -45,13 +46,17 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     "Buy and Sell with Alibaba",
-                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                        color: Theme.of(context).primaryColor, fontSize: 22),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(color: Colors.black, fontSize: 22),
                   ),
                   Text(
                     "one finger click of your choice",
-                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                        color: Theme.of(context).primaryColor, fontSize: 22),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(color: Colors.black, fontSize: 22),
                   ),
                   SizedBox(
                     height: 10,
@@ -111,9 +116,10 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       Text(
                         "Forgot Password?",
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 18),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2!
+                            .copyWith(color: Colors.black, fontSize: 18),
                       ),
                       SizedBox(
                         height: 5,
@@ -125,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                             "Don't Have An Account?",
                             style:
                                 Theme.of(context).textTheme.bodyText1!.copyWith(
-                                      color: Theme.of(context).primaryColor,
+                                      color: Colors.black,
                                       fontSize: 18,
                                     ),
                           ),
@@ -143,9 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText2!
-                                  .copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 17),
+                                  .copyWith(color: Colors.orange, fontSize: 17),
                             ),
                           )
                         ],

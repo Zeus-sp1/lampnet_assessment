@@ -37,15 +37,16 @@ class _OnBoarding_PageState extends State<OnBoarding_Page> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.orange,
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 25),
           child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/alibaba3.jpeg"),
-                fit: BoxFit.cover,
-              ),
-            ),
+            // decoration: BoxDecoration(
+            //   image: DecorationImage(
+            //     image: AssetImage("assets/alibaba3.jpeg"),
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -125,9 +126,7 @@ class _OnBoarding_PageState extends State<OnBoarding_Page> {
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border.all(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                            width: 1),
+                                            color: Colors.black, width: 1),
                                       ),
                                       child: Center(
                                         child: Text('Skip',
@@ -135,8 +134,7 @@ class _OnBoarding_PageState extends State<OnBoarding_Page> {
                                                 .textTheme
                                                 .bodyText2!
                                                 .copyWith(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
+                                                  color: Colors.black,
                                                   fontSize: 25,
                                                   fontWeight: FontWeight.bold,
                                                   letterSpacing: .5,
@@ -186,7 +184,7 @@ class _OnBoarding_PageState extends State<OnBoarding_Page> {
                         _currentPageNotifier.value = index;
                         if (index == (carouselImages.length - 1)) {
                           setState(() {
-                            title = '';
+                            title = 'Next';
                             quote = '';
                             quote2 = "";
                             note = "";
@@ -196,7 +194,7 @@ class _OnBoarding_PageState extends State<OnBoarding_Page> {
                           setState(() {
                             quote = '';
                             quote2 = " ";
-                            title = '';
+                            title = 'Next';
                             loginNote = "";
                             note = "";
                           });
@@ -204,7 +202,7 @@ class _OnBoarding_PageState extends State<OnBoarding_Page> {
                           setState(() {
                             quote = "";
                             quote2 = "";
-                            title = '';
+                            title = 'Next';
                             loginNote = "";
                             note = "";
                           });
@@ -250,12 +248,14 @@ class _OnBoarding_PageState extends State<OnBoarding_Page> {
         height: 55,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor,
-            borderRadius: BorderRadius.circular(10)),
+            color: Colors.white, borderRadius: BorderRadius.circular(10)),
         child: Center(
           child: Text(
             title.toString(),
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context)
+                .textTheme
+                .bodyText2!
+                .copyWith(color: Colors.black),
           ),
         ),
       ),

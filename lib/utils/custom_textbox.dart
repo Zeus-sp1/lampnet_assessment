@@ -46,7 +46,7 @@ class CustomTextBox extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
           borderSide: BorderSide(
-            color: Theme.of(context).primaryColor,
+            color: Colors.orange,
           ),
         ),
         border: const OutlineInputBorder(),
