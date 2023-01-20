@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -8,15 +9,29 @@ import 'package:image_picker/image_picker.dart';
 class BuyersController extends GetxController {
   var selectedImagePath = ''.obs;
   var selectedImageSize = ''.obs;
+  final cloudinary = CloudinaryPublic(
+      'https://api.cloudinary.com/v1_1/do3waasgr', 'crq4is1h',
+      cache: false);
 
   void getImage(ImageSource imageSource) async {
     final pickedFile = await ImagePicker().getImage(source: imageSource);
     if (pickedFile != null) {
       selectedImagePath.value = pickedFile.path;
-      selectedImageSize.value =
-          ((File(selectedImagePath.value)).lengthSync() / 1024 / 1024)
-                  .toStringAsFixed(2) +
-              'Mb';
+      try {
+        CloudinaryResponse response = await cloudinary.uploadFile(
+          CloudinaryFile.fromFile(selectedImagePath.value,
+              resourceType: CloudinaryResourceType.Image),
+        );
+
+        print(response.secureUrl);
+      } on CloudinaryException catch (e) {
+        print(e.message);
+        print(e.request);
+      }
+      // selectedImageSize.value =
+      //     ((File(selectedImagePath.value)).lengthSync() / 1024 / 1024)
+      //             .toStringAsFixed(2) +
+      //         'Mb';
     } else {
       Get.snackbar('Error', 'No Image Selected',
           snackPosition: SnackPosition.BOTTOM,

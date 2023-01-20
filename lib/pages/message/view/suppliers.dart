@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../controller/suppliers.dart';
@@ -105,6 +108,60 @@ class _SuppliersState extends State<Suppliers> {
                       ),
                       SizedBox(
                         height: 1.h,
+                      ),
+                      Obx(() => controller.selectedImagePath.value == ''
+                          ? Text('Select image from Camera/Galley',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText1!
+                                  .copyWith(
+                                    color: Colors.red,
+                                    fontSize: 12.sp,
+                                  ))
+                          : Image.file(
+                              File(controller.selectedImagePath.value))),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      Obx(() => Text(
+                          controller.selectedImageSize.value == ''
+                              ? ''
+                              : controller.selectedImageSize.value,
+                          style:
+                              Theme.of(context).textTheme.bodyText1!.copyWith(
+                                    color: Colors.red,
+                                    fontSize: 12.sp,
+                                  ))),
+                      Container(
+                        color: Colors.red,
+                        child: TextButton(
+                          onPressed: () {
+                            controller.getImage(ImageSource.camera);
+                          },
+                          child: Text('Camera',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText1!
+                                  .copyWith(
+                                      color: Colors.white, fontSize: 12.sp)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      Container(
+                        color: Colors.red,
+                        child: TextButton(
+                          onPressed: () {
+                            controller.getImage(ImageSource.gallery);
+                          },
+                          child: Text('Gallery',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText1!
+                                  .copyWith(
+                                      color: Colors.white, fontSize: 12.sp)),
+                        ),
                       ),
                     ],
                   )
